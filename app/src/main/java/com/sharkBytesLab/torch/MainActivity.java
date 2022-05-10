@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +20,7 @@ import com.karumi.dexter.listener.single.PermissionListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton torch;
+    private ImageButton torch, more;
     private boolean state;
 
     @Override
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         torch = findViewById(R.id.torchButton);
+        more = findViewById(R.id.more);
 
         Dexter.withContext(this).withPermission(Manifest.permission.CAMERA).withListener(new PermissionListener() {
             @Override
@@ -51,6 +53,18 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }).check();
+
+
+        more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(MainActivity.this, MenuActivity.class));
+                finish();
+
+            }
+        });
+
 
     }
 
