@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.applovin.mediation.MaxAd;
 import com.applovin.mediation.MaxAdListener;
 import com.applovin.mediation.MaxError;
+import com.applovin.mediation.ads.MaxAdView;
 import com.applovin.mediation.ads.MaxInterstitialAd;
 
 import java.util.concurrent.TimeUnit;
@@ -22,6 +23,7 @@ public class MenuActivity extends AppCompatActivity implements MaxAdListener {
     private CardView ratings, review, terms, privacy, support;
     private MaxInterstitialAd interstitialAd;
     private int retryAttempt;
+    private MaxAdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,9 @@ public class MenuActivity extends AppCompatActivity implements MaxAdListener {
         terms = findViewById(R.id.terms);
         privacy = findViewById(R.id.privacy);
         support = findViewById(R.id.support_us);
+        adView = findViewById(R.id.applovinAd);
+
+        adView.loadAd();
 
         interstitialAd = new MaxInterstitialAd( "19a73b4927442c34", this );
         interstitialAd.setListener( this );
