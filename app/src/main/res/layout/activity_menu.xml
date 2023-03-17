@@ -159,40 +159,46 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
+        android:id="@+id/ads_ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/support_us"
-        app:cardBackgroundColor="@color/white"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
-
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/terms"
         >
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/supportUs"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:background="@color/white"
+            android:padding="15dp"
+            android:text="Watch Video Ad"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="19sp"
+            android:layout_marginRight="8dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_margin="20dp"
-                android:layout_gravity="center"
-                android:text="Support Us"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:fontFamily="@font/airbnb_cereal_medium"
-                />
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/watch_video"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="15dp"
+            android:text="Rewarded Ads"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="19sp"
+            android:layout_marginLeft="8dp"
+            />
 
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 </LinearLayout>

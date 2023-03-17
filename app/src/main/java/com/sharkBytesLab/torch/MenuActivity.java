@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.applovin.mediation.MaxAd;
@@ -20,10 +21,11 @@ import java.util.concurrent.TimeUnit;
 
 public class MenuActivity extends AppCompatActivity implements MaxAdListener {
 
-    private CardView ratings, review, terms, privacy, support;
+    private CardView ratings, review, terms, privacy;
     private MaxInterstitialAd interstitialAd;
     private int retryAttempt;
     private MaxAdView adView;
+    TextView support, watch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,8 @@ public class MenuActivity extends AppCompatActivity implements MaxAdListener {
         review = findViewById(R.id.review);
         terms = findViewById(R.id.terms);
         privacy = findViewById(R.id.privacy);
-        support = findViewById(R.id.support_us);
+        support = findViewById(R.id.supportUs);
+        watch = findViewById(R.id.watch_video);
         adView = findViewById(R.id.applovinAd);
 
         adView.loadAd();
@@ -45,6 +48,12 @@ public class MenuActivity extends AppCompatActivity implements MaxAdListener {
         // Load the first ad
         interstitialAd.loadAd();
 
+        watch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MenuActivity.this, RewardActivity.class));
+            }
+        });
         review.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
