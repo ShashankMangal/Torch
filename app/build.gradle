@@ -9,8 +9,8 @@ android {
         applicationId "com.sharkBytesLab.torch"
         minSdk 21
         targetSdk 33
-        versionCode 7
-        versionName "7.6.0"
+        versionCode 8
+        versionName "8.6.21"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -37,5 +37,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation 'com.karumi:dexter:6.2.3'
-    implementation 'com.applovin:applovin-sdk:11.8.2'
+    implementation 'com.ironsource.sdk:mediationsdk:7.3.0.1'
 }

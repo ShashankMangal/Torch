@@ -9,13 +9,15 @@
     android:gravity="center"
     tools:context=".MenuActivity">
 
-    <com.applovin.mediation.ads.MaxAdView
-        android:id="@+id/applovinAd"
-        xmlns:maxads="http://schemas.applovin.com/android/1.0"
-        maxads:adUnitId="2b6bc9a0d65e1fe9"
+    <LinearLayout
+        android:id="@+id/bannerId"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
-    </com.applovin.mediation.ads.MaxAdView>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
